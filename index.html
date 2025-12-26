@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Melhores Investimentos — Guia Completo e Prático</title>
+  <meta name="description" content="Guia completo e educativo sobre onde e como investir: renda fixa, ações, ETFs, FIIs, cripto, estratégias, impostos e proteção.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;      /* fundo principal */
+      --surface: #111827; /* cartões e blocos */
+      --text: #e5e7eb;    /* texto padrão */
+      --muted: #9ca3af;   /* texto secundário */
+      --accent: #22c55e;  /* verde */
+      --accent2: #38bdf8; /* azul */
+      --warn: #f59e0b;    /* amarelo */
+      --danger: #ef4444;  /* vermelho */
+      --ok: #10b981;      /* verde claro */
+      --shadow: rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif }
+    img { max-width: 100%; height: auto; border-radius: 12px }
+    a { color: var(--accent2); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1rem }
+    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: rgba(15,23,42,.7); border-bottom: 1px solid rgba(229,231,235,.08); z-index: 10 }
+    .brand { display: flex; align-items: center; gap: .75rem }
+    .logo { width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg,var(--accent),var(--accent2)); display: grid; place-items: center; font-weight: 700; color: #0b1020 }
+    nav { display: flex; flex-wrap: wrap; gap: .5rem .75rem; margin-top: .5rem }
+    nav a { padding: .45rem .7rem; border-radius: 10px; background: rgba(17,24,39,.6); border: 1px solid rgba(229,231,235,.08) }
+    .hero { position: relative; overflow: hidden; }
+    .hero-bg {
+      width: 100%; height: 46vh; min-height: 320px;
+      background-image: url('https://images.unsplash.com/photo-1520607162513-77745b707fbe?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover; background-position: center;
+      filter: contrast(1.05) saturate(1.05) brightness(.75);
+    }
+    .hero-content {
+      position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 1rem;
+    }
+    .hero-card {
+      background: rgba(17,24,39,.7); border: 1px solid rgba(229,231,235,.12); border-radius: 16px; padding: 1.2rem; max-width: 900px; box-shadow: 0 12px 30px var(--shadow);
+    }
+    h1 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1; margin: 0 0 .4rem }
+    .subtitle { color: var(--muted); margin-top: .4rem }
+    .cta { display: flex; gap: .6rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap }
+    .btn { display: inline-block; padding: .65rem .95rem; border-radius: 12px; font-weight: 600; border: 1px solid rgba(229,231,235,.12) }
+    .btn.primary { background: linear-gradient(135deg,var(--accent),var(--accent2)); color: #091226; border: none }
+    .btn.secondary { background: rgba(17,24,39,.8) }
+    section { padding: 2rem 1rem }
+    section h2 { margin-top: 0; font-size: 1.5rem }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 1rem; }
+    .card { background: var(--surface); border: 1px solid rgba(229,231,235,.1); border-radius: 14px; padding: 1rem }
+    .badge { display: inline-block; padding: .28rem .6rem; border-radius: 999px; font-size: .8rem; background: rgba(34,197,94,.14); color: var(--accent); border: 1px solid rgba(34,197,94,.25) }
+    .badge.warn { background: rgba(245,158,11,.12); color: var(--warn); border-color: rgba(245,158,11,.25) }
+    .badge.danger { background: rgba(239,68,68,.12); color: var(--danger); border-color: rgba(239,68,68,.25) }
+    .list { margin: .5rem 0; padding-left: 1rem }
+    .list li { margin: .25rem 0 }
+    .proscons { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: .5rem }
+    .note { font-size: .95rem; color: var(--muted) }
+    .highlight { border-left: 3px solid var(--accent2); padding-left: .6rem }
+    .disclaimer { border-left: 3px solid var(--accent2); padding-left: .75rem }
+    .foot { border-top: 1px solid rgba(229,231,235,.08); padding: 1.5rem 1rem; color: var(--muted); text-align: center }
+    .table { width: 100%; border-collapse: collapse; overflow-x: auto }
+    .table th, .table td { border: 1px solid rgba(229,231,235,.1); padding: .6rem; text-align: left }
+    .table th { background: rgba(17,24,39,.6) }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem }
+    @media (max-width: 760px) {
+      .proscons, .two { grid-template-columns: 1fr }
+      .hero-bg { height: 42vh }
+    }
+    .code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; background: rgba(17,24,39,.7); border: 1px solid rgba(229,231,235,.12); border-radius: 10px; padding: .75rem; overflow-x: auto }
+    .kpi { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .8rem }
+    .kpi .chip { background: rgba(17,24,39,.6); border: 1px solid rgba(229,231,235,.12); border-radius: 12px; padding: .5rem .65rem; }
+    .callout { background: rgba(56,189,248,.12); border: 1px solid rgba(56,189,248,.25); border-radius: 12px; padding: .75rem; }
+    .warnbox { background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.25); border-radius: 12px; padding: .75rem; }
+    .dangerbox { background: rgba(239,68,68,.12); border: 1px solid rgba(239,68,68,.25); border-radius: 12px; padding: .75rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">MI</div>
+        <div>
+          <strong>Melhores Investimentos</strong><br>
+          <span class="note">Guia completo, prático e educativo</span>
+        </div>
+      </div>
+      <nav aria-label="Navegação principal">
+        <a href="#introducao">Introdução</a>
+        <a href="#onde-investir">Onde investir</a>
+        <a href="#como-ganhar">Como ganhar dinheiro</a>
+        <a href="#passos">Passos práticos</a>
+        <a href="#estrategias">Estratégias</a>
+        <a href="#riscos">Riscos e proteção</a>
+        <a href="#impostos">Impostos e custos</a>
+        <a href="#cripto">Criptomoedas</a>
+        <a href="#perguntas">Perguntas</a>
+        <a href="#glossario">Glossário</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero com imagem de capa -->
+  <section class="hero" id="introducao" aria-label="Capa">
+    <div class="hero-bg" role="img" aria-label="Imagem de capa mostrando gráficos de mercado e dados financeiros"></div>
+    <div class="hero-content">
+      <div class="hero-card">
+        <h1>Os melhores investimentos para cada objetivo, prazo e perfil</h1>
+        <p class="subtitle">Aprenda onde e como investir, estratégias para crescer seu patrimônio e boas práticas para proteger risco.</p>
+        <div class="cta">
+          <a class="btn primary" href="#onde-investir">Explorar opções de investimento</a>
+          <a class="btn secondary" href="#passos">Começar na prática</a>
+        </div>
+        <div class="kpi" aria-label="Indicadores principais">
+          <div class="chip"><strong>Objetivo:</strong> clareza primeiro</div>
+          <div class="chip"><strong>Prazo:</strong> curto, médio, longo</div>
+          <div class="chip"><strong>Risco:</strong> diversificação inteligente</div>
+          <div class="chip"><strong>Custos:</strong> taxa baixa importa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Onde investir -->
+  <section id="onde-investir" class="wrap">
+    <h2>Onde investir: principais classes de ativos</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Baixo risco</span>
+        <h3>Renda fixa (Tesouro, CDB, LCI/LCA)</h3>
+        <ul class="list">
+          <li><strong>Como funciona:</strong> Títulos com taxas prefixadas, pós-fixadas (CDI/Selic) ou indexadas ao IPCA.</li>
+          <li><strong>Para quem:</strong> Reserva de emergência e metas com prazo definido.</li>
+        </ul>
+        <div class="proscons">
+          <div>
+            <strong>Prós</strong>
+            <ul class="list">
+              <li>Liquidez (Tesouro Selic e CDBs com liquidez diária)</li>
+              <li>Menor volatilidade</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Contras</strong>
+            <ul class="list">
+              <li>Rentabilidade limitada</li>
+              <li>Risco de marcação a mercado em prazos longos</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Base da carteira. Priorize liquidez diária para reserva.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">Médio a alto risco</span>
+        <h3>Ações</h3>
+        <ul class="list">
+          <li><strong>Como funciona:</strong> Participação em empresas listadas, com potencial de valorização e dividendos.</li>
+          <li><strong>Para quem:</strong> Horizontes longos e tolerância a volatilidade.</li>
+        </ul>
+        <div class="proscons">
+          <div>
+            <strong>Prós</strong>
+            <ul class="list">
+              <li>Crescimento de capital</li>
+              <li>Dividendos e juros sobre capital próprio</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Contras</strong>
+            <ul class="list">
+              <li>Oscilações fortes</li>
+              <li>Risco específico de empresa/setor</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Diversifique entre setores e evite concentração.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">Diversificação simples</span>
+        <h3>ETFs (fundos de índice)</h3>
+        <ul class="list">
+          <li><strong>Como funciona:</strong> Replicam índices locais (Ibovespa) e globais (S&P 500, Nasdaq) com baixo custo.</li>
+          <li><strong>Para quem:</strong> Busca simplicidade e ampla diversificação.</li>
+        </ul>
+        <div class="proscons">
+          <div>
+            <strong>Prós</strong>
+            <ul class="list">
+              <li>Baixas taxas</li>
+              <li>Exposição ampla instantânea</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Contras</strong>
+            <ul class="list">
+              <li>Segue o índice, não tenta superá-lo</li>
+              <li>Tributação conforme classe</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Combine ETFs locais e globais para diversificação de moeda.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">Renda mensal</span>
+        <h3>FIIs (fundos imobiliários)</h3>
+        <ul class="list">
+          <li><strong>Como funciona:</strong> Fundos que investem em imóveis (tijolo) e títulos imobiliários (papel).</li>
+          <li><strong>Para quem:</strong> Busca rendimentos e exposição imobiliária sem comprar imóvel.</li>
+        </ul>
+        <div class="proscons">
+          <div>
+            <strong>Prós</strong>
+            <ul class="list">
+              <li>Rendimentos frequentes</li>
+              <li>Gestão profissional</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Contras</strong>
+            <ul class="list">
+              <li>Vacância e risco de gestão</li>
+              <li>Oscilações de preço</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Avalie tipo de FII, portfólio, vacância e histórico do gestor.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge warn">Alta volatilidade</span>
+        <h3>Criptomoedas</h3>
+        <ul class="list">
+          <li><strong>Como funciona:</strong> Ativos digitais descentralizados (ex.: Bitcoin, Ethereum) com oferta programada.</li>
+          <li><strong>Para quem:</strong> Perfil arrojado, ciente dos riscos e da alta oscilação.</li>
+        </ul>
+        <div class="proscons">
+          <div>
+            <strong>Prós</strong>
+            <ul class="list">
+              <li>Potencial de valorização</li>
+              <li>Descorrelação parcial com ativos tradicionais</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Contras</strong>
+            <ul class="list">
+              <li>Alta volatilidade</li>
+              <li>Risco regulatório e tecnológico</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Se optar, faça alocação pequena e com longo prazo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como ganhar dinheiro -->
+  <section id="como-ganhar" class="wrap">
+    <h2>Como ganhar dinheiro com investimentos (princípios que funcionam)</h2>
+    <div class="two">
+      <div class="card">
+        <h3>1) Juros compostos e tempo</h3>
+        <ul class="list">
+          <li><strong>Reinvista:</strong> dividendos e rendimentos aceleram o crescimento.</li>
+          <li><strong>Consistência:</strong> pequenas contribuições regulares acumulam muito ao longo dos anos.</li>
+        </ul>
+        <div class="callout">
+          <strong>Dica:</strong> automatize aportes mensais e reflita suas metas em percentuais por classe de ativo.
+        </div>
+      </div>
+      <div class="card">
+        <h3>2) Custos baixos</h3>
+        <ul class="list">
+          <li><strong>Taxas:</strong> prefira produtos com taxa de administração menor.</li>
+          <li><strong>Tributos:</strong> conheça regras para evitar surpresas e operar com eficiência.</li>
+        </ul>
+        <p class="note">Custos altos corroem retornos. Simplicidade costuma vencer no longo prazo.</p>
+      </div>
+      <div class="card">
+        <h3>3) Diversificação inteligente</h3>
+        <ul class="list">
+          <li><strong>Entre classes:</strong> renda fixa, ações, FIIs, ETFs, cripto.</li>
+          <li><strong>Geográfica:</strong> combine Brasil e exterior para reduzir risco local.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>4) Disciplina e plano</h3>
+        <ul class="list">
+          <li><strong>Rebalancear:</strong> ajuste pesos periodicamente.</li>
+          <li><strong>Evite ruído:</strong> foque em metas e ignore manchetes diárias.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passos práticos -->
+  <section id="passos" class="wrap">
+    <h2>Passos práticos para começar no Brasil</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Passo 1: objetivos e prazos</h3>
+        <ul class="list">
+          <li><strong>Curto prazo:</strong> liquidez e estabilidade (Tesouro Selic, CDB liquidez diária).</li>
+          <li><strong>Médio prazo:</strong> mistura de renda fixa, FIIs e ETFs.</li>
+          <li><strong>Longo prazo:</strong> maior peso em ações e ETFs globais.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Passo 2: abrir conta</h3>
+        <ul class="list">
+          <li><strong>Corretora:</strong> escolha instituição regulada (CVM/B3) e com boas ferramentas.</li>
+          <li><strong>Cadastrar:</strong> documentações básicas e verificação de identidade.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Passo 3: aporte e reserva</h3>
+        <ul class="list">
+          <li><strong>PIX:</strong> transfira para a corretora.</li>
+          <li><strong>Reserva:</strong> 3–6 meses de despesas em liquidez diária e baixo risco.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Passo 4: alocação inicial</h3>
+        <ul class="list">
+          <li><strong>Conservador:</strong> mais renda fixa, menos variável.</li>
+          <li><strong>Moderado:</strong> equilíbrio entre renda fixa e variável.</li>
+          <li><strong>Arrojado:</strong> maior exposição a ações/ETFs e pequena parcela em cripto.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Passo 5: rotina de investimentos</h3>
+        <ul class="list">
+          <li><strong>Aportes:</strong> mensais, com constância.</li>
+          <li><strong>Rebalanceamento:</strong> trimestral ou semestral.</li>
+          <li><strong>Aprendizado:</strong> acompanhe relatórios e relatórios de fundos.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Mantenha um controle simples de metas, aportes e distribuição por classe. Transparência traz tranquilidade.</p>
+  </section>
+
+  <!-- Estratégias -->
+  <section id="estrategias" class="wrap">
+    <h2>Estratégias populares e como aplicá-las</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Longo prazo</span>
+        <h3>Buy & hold</h3>
+        <ul class="list">
+          <li><strong>Ideia:</strong> comprar negócios/índices de qualidade e manter no longo prazo.</li>
+          <li><strong>Prática:</strong> foco em fundamentos e custos baixos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Disciplina</span>
+        <h3>Dollar-cost averaging (DCA)</h3>
+        <ul class="list">
+          <li><strong>Ideia:</strong> aportar valores fixos em intervalos regulares.</li>
+          <li><strong>Prática:</strong> reduz risco de timing e aumenta consistência.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Renda</span>
+        <h3>Dividendos e FIIs</h3>
+        <ul class="list">
+          <li><strong>Ideia:</strong> construir fluxo de caixa passivo.</li>
+          <li><strong>Prática:</strong> priorize qualidade de gestão e sustentabilidade de pagamentos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge warn">Atenção</span>
+        <h3>Trend following e alocação tática</h3>
+        <ul class="list">
+          <li><strong>Ideia:</strong> ajustar exposição conforme tendência de mercado.</li>
+          <li><strong>Prática:</strong> regras claras e controle de risco.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge danger">Risco elevado</span>
+        <h3>Trading de curto prazo</h3>
+        <ul class="list">
+          <li><strong>Ideia:</strong> operar oscilações no curto prazo.</li>
+          <li><strong>Prática:</strong> demanda técnica, disciplina e pode não ser adequado para iniciantes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Riscos e proteção -->
+  <section id="riscos" class="wrap">
+    <h2>Riscos, proteção e boas práticas</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Principais riscos</h3>
+        <ul class="list">
+          <li><strong>Mercado:</strong> oscilações de preço e ciclos econômicos.</li>
+          <li><strong>Crédito:</strong> inadimplência de emissores e contrapartes.</li>
+          <li><strong>Liquidez:</strong> dificuldade de vender ativo rapidamente.</li>
+          <li><strong>Regulatório:</strong> mudanças de regras e impostos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Proteção e mitigação</h3>
+        <ul class="list">
+          <li><strong>Diversificação:</strong> classes, setores e países.</li>
+          <li><strong>Prazos corretos:</strong> combine ativos ao horizonte.</li>
+          <li><strong>Qualidade:</strong> emissões/gestores sólidos e transparentes.</li>
+          <li><strong>Reserva:</strong> colchão de segurança em liquidez diária.</li>
+        </ul>
+        <div class="warnbox">
+          <strong>Regra simples:</strong> nunca invista em algo que você não entende. Estudo antes, aporte depois.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impostos e custos -->
+  <section id="impostos" class="wrap">
+    <h2>Impostos e custos: visão geral</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Tributação comum (visão geral)</h3>
+        <ul class="list">
+          <li><strong>Renda fixa:</strong> IR com alíquota regressiva conforme prazo; LCI/LCA são isentas para pessoa física.</li>
+          <li><strong>Ações:</strong> regra de isenção/limites para venda mensal; lucros acima são tributados.</li>
+          <li><strong>ETFs/FIIs:</strong> tributação específica por classe; rendimentos de FIIs possuem regras próprias.</li>
+          <li><strong>Cripto:</strong> ganhos podem ser tributados conforme volume e lucro realizado.</li>
+        </ul>
+        <p class="note">As regras mudam ao longo do tempo. Consulte fontes oficiais e sua corretora/contador.</p>
+      </div>
+      <div class="card">
+        <h3>Custos que importam</h3>
+        <ul class="list">
+          <li><strong>Taxas de administração:</strong> prefira baixas, especialmente em ETFs e fundos.</li>
+          <li><strong>Taxas de corretagem/custódia:</strong> verifique políticas da corretora.</li>
+          <li><strong>Spread e slippage:</strong> atenção em operações de curto prazo.</li>
+        </ul>
+        <div class="callout">
+          <strong>Dica:</strong> custos pequenos e recorrentes acumulam muito no longo prazo. Compare e escolha com calma.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Criptomoedas com imagem -->
+  <section id="cripto" class="wrap">
+    <h2>Criptomoedas: o que saber antes de investir</h2>
+    <div class="two">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1621410363411-62b7e52f41a7?q=80&w=1200&auto=format&fit=crop" alt="Imagem de moeda virtual (Bitcoin) sobre uma placa de circuito">
+        <ul class="list">
+          <li><strong>Chaves e custódia:</strong> entenda a diferença entre custodiar sozinho e usar corretoras.</li>
+          <li><strong>Segurança:</strong> autenticação em dois fatores, carteiras confiáveis e proteção contra phishing.</li>
+          <li><strong>Alocação:</strong> mantenha percentual pequeno e de longo prazo, se fizer sentido para seu perfil.</li>
+        </ul>
+        <p class="note">Cripto é opcional. Estude tecnologia, riscos e fundamentos antes de alocar.</p>
+      </div>
+      <div class="card">
+        <h3>Quando cripto pode fazer sentido?</h3>
+        <ul class="list">
+          <li><strong>Tese de reserva digital:</strong> proteção parcial contra inflação e risco cambial.</li>
+          <li><strong>Inovação:</strong> exposição a novas plataformas e casos de uso.</li>
+          <li><strong>Diversificação:</strong> baixa correlação em alguns períodos.</li>
+        </ul>
+        <div class="dangerbox">
+          <strong>Alerta:</strong> volatilidade extrema. Evite alavancagem e jamais invista dinheiro que você pode precisar no curto prazo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perguntas frequentes -->
+  <section id="perguntas" class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Qual é “o melhor” investimento?</h3>
+        <p><span class="badge danger">Não existe único melhor</span>. Depende de objetivo, prazo, liquidez e tolerância ao risco.</p>
+      </div>
+      <div class="card">
+        <h3>Como reduzir risco sem perder potencial?</h3>
+        <ul class="list">
+          <li><strong>Diversificação:</strong> classes e geografias.</li>
+          <li><strong>Prazos:</strong> combine ativos ao horizonte.</li>
+          <li><strong>Custos:</strong> mantenha taxas baixas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Com quanto devo começar?</h3>
+        <p>O que for confortável. Importante é começar e manter constância. Mesmo aportes pequenos fazem diferença com o tempo.</p>
+      </div>
+      <div class="card">
+        <h3>Preciso acompanhar todo dia?</h3>
+        <p>Não. Uma rotina mensal de aportes e revisão trimestral/semestral costuma ser suficiente para estratégias de longo prazo.</p>
+      </div>
+      <div class="card">
+        <h3>Como escolher corretora?</h3>
+        <ul class="list">
+          <li><strong>Regulação:</strong> instituições autorizadas e supervisionadas.</li>
+          <li><strong>Custos e plataforma:</strong> taxas competitivas e ferramentas estáveis.</li>
+          <li><strong>Suporte:</strong> atendimento e materiais educativos.</li>
+        </ul>
+      </div>
+      <div class="card disclaimer">
+        <p><strong>Aviso:</strong> Conteúdo educativo. Não é recomendação de investimento. Para aconselhamento personalizado, busque orientação profissional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossário -->
+  <section id="glossario" class="wrap">
+    <h2>Glossário rápido</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Liquidez</h3>
+        <p>Facilidade de converter um ativo em dinheiro sem perdas relevantes.</p>
+      </div>
+      <div class="card">
+        <h3>Volatilidade</h3>
+        <p>Grau de variação de preço. Quanto maior, mais oscilações no curto prazo.</p>
+      </div>
+      <div class="card">
+        <h3>Diversificação</h3>
+        <p>Distribuir investimentos entre diferentes ativos para reduzir risco.</p>
+      </div>
+      <div class="card">
+        <h3>Juros compostos</h3>
+        <p>Ganhos sobre ganhos ao reinvestir rendimentos ao longo do tempo.</p>
+      </div>
+      <div class="card">
+        <h3>Marcação a mercado</h3>
+        <p>Ajuste de preço de um título ao valor de mercado, podendo causar variações temporárias.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabela exemplo de alocação por perfil -->
+  <section class="wrap">
+    <h2>Exemplo ilustrativo de alocação por perfil</h2>
+    <div class="card">
+      <div style="overflow-x:auto">
+        <table class="table" aria-label="Tabela de alocação por perfil">
+          <thead>
+            <tr>
+              <th>Perfil</th>
+              <th>Renda fixa</th>
+              <th>Ações/ETFs</th>
+              <th>FIIs</th>
+              <th>Cripto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Conservador</td>
+              <td>70–85%</td>
+              <td>10–20%</td>
+              <td>5–10%</td>
+              <td>0–2%</td>
+            </tr>
+            <tr>
+              <td>Moderado</td>
+              <td>50–65%</td>
+              <td>20–35%</td>
+              <td>10–15%</td>
+              <td>0–5%</td>
+            </tr>
+            <tr>
+              <td>Arrojado</td>
+              <td>25–40%</td>
+              <td>40–60%</td>
+              <td>5–10%</td>
+              <td>0–10%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Exemplo didático. Ajuste conforme objetivos, prazo e conforto com risco.</p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="foot">
+    © 2025 • Melhores Investimentos • Conteúdo educativo • Feito para orientar seu próximo passo
+  </footer>
+</body>
+</html>
